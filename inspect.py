@@ -2,8 +2,6 @@
 
 import struct
 
-from pprint import pformat
-
 def bytes_from_file(filename, chunk_size=8192):
     with open(filename, "rb") as f:
         while True:
@@ -26,7 +24,7 @@ def print_contents():
     names = ["0x29", "0x0c", "0x2b"]
     marker = 0
 
-    for byte in bytes_from_file("packet-reformatted.bin"):
+    for byte in bytes_from_file("packets/packet-reformatted.bin"):
         byte = ord(byte)
 
         if byte == 0x00 and \
