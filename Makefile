@@ -1,3 +1,7 @@
+all: output.txt
+
+.PHONY: all
+
 packets/packet.bin:
 	@cat packets/packet-1.bin \
 		packets/packet-2.bin \
@@ -19,5 +23,5 @@ packets/packet.bin:
 packets/packet-reformatted.bin: packets/packet.bin
 	@./reformat.py
 
-output.txt:
+output.txt: inspect.py
 	@./inspect.py > output.txt
