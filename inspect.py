@@ -2,16 +2,7 @@
 
 import struct
 
-def bytes_from_file(filename, chunk_size=8192):
-    with open(filename, "rb") as f:
-        while True:
-            chunk = f.read(chunk_size)
-
-            if chunk:
-                for byte in chunk:
-                    yield byte
-            else:
-                break
+from helpers import bytes_from_file
 
 # steps, calories, skin temperature, perspiration, heart rate
 # sleeping, awake, active, unknown
