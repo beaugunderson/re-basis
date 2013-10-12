@@ -70,7 +70,7 @@ def print_contents():
     def format_0x0c(data):
         (timestamp,) = struct.unpack_from("I", data)
 
-        print "%d" % (timestamp)
+        print "0x0c: %d" % (timestamp)
 
         data = data[4:]
 
